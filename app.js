@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
+require('dotenv').config()
 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
@@ -18,4 +19,4 @@ app.use('/user', require('./routes/user'));
 
 
 
-app.listen(config.PORT, ()=>{console.log('server live '+ config.BASE_URL)});
+app.listen(process.env.PORT || config.PORT, ()=>{console.log('server live '+ config.BASE_URL)});
