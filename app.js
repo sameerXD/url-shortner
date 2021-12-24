@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
+
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname+'/public/views');
