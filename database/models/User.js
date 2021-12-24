@@ -12,7 +12,7 @@ let userSchema = new Schema({
 
   data:[
       {
-          orignalUrl:{type:SchemaTypes.String, required:true, unique:true},
+          orignalUrl:{type:SchemaTypes.String, required:true},
           shortUrl:{type:SchemaTypes.String, required:true},
           timeStamp:{type:SchemaTypes.Date,default:Date.now()},
           count:{type:SchemaTypes.Number, default:0}
