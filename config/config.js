@@ -2,7 +2,7 @@ require('dotenv').config();
 
 let PORT=3000;
 let BASE_URL=`http://localhost:${PORT}`;
-
+let HEROKU_URL = 'https://url-shortner-google-auth-node.herokuapp.com/';
 module.exports = {
     PORT,
     BASE_URL,
@@ -20,7 +20,8 @@ module.exports = {
             'https://www.googleapis.com/auth/userinfo.profile'
           ],
         REDIRECT_URIS: [
-            `${BASE_URL}/user/auth_callback`
+            `${BASE_URL}/user/auth_callback`,
+            `${HEROKU_URL}user/auth_callback`
         ],
     }
 }

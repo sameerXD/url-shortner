@@ -2,7 +2,8 @@ const res = require('express/lib/response');
 const {OAuth2Client} = require('google-auth-library');
 const config = require('../config/config');
 
-const client = new OAuth2Client(config.GOOGLE_AUTH.CLIENT_ID,config.GOOGLE_AUTH.CLIENT_SECRET,config.GOOGLE_AUTH.REDIRECT_URIS[0] );
+// USE URI[0] FOR LOCAL DEPLOYMENT AND URI[1] FOR HEROKU SO THAT CALLBACK URL CAN BE CHANGED
+const client = new OAuth2Client(config.GOOGLE_AUTH.CLIENT_ID,config.GOOGLE_AUTH.CLIENT_SECRET,config.GOOGLE_AUTH.REDIRECT_URIS[1] );
 
 const createUrl = ()=>{
     return client.generateAuthUrl({
